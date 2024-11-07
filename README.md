@@ -54,7 +54,7 @@ Special thanks to all contributors and supporters who helped make CommunityQuest
 
 This project was developed by:
 - Hari Narayan M R [https://github.com/hxri-nxrxyxn]
-- Sebastian Abraham 
+- Sebastian Abraham [https://github.com/Sebaztian-Abrhm]
 - Shane Jacob [https://github.com/Shanecode3]
 - Sreya Anna Joseph [https://github.com/SreyaJoseph]
  
