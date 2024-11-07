@@ -12,8 +12,8 @@ body{
     justify-content: center;
     flex-direction: column;
     font-family: "Inter";
-    background-image: url(photo-1451187580459-43490279c0fa.jpg);
-    background-size: 300%;
+    background-image: url(image.jpg);
+    background-size: 500%;
     background-position: top left;
     animation: moveIt 15s linear infinite;
     background-repeat: repeat;
@@ -65,26 +65,9 @@ body{
     border-radius:50%;
     width: 35vw;
     height: 35vw;
-    background: linear-gradient(
-        45deg,
-        #FF0000, #FF7300, #FFFB00, #48FF00,
-        #00FFD5, #002BFF, #FF00C8, #FF0000
-    );
-    position: absolute;
-    top:-2px;
-    left: -2px;
-    background-size: 600%;
-    z-index: -1;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
     max-width: 500px;
 }
 
-@keyframes glowing {
-    0% {background-position: 0 0;}
-    50% {background-position: 400% 0;}
-    100% {background-position: 0 0;}
-}
 
 .intro__links{
     padding: 5rem 11rem 5rem 0rem;
