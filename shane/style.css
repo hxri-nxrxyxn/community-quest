@@ -27,10 +27,23 @@ body{
 }
 
 .intro__title{
-    padding: 4rem 9rem 6rem 2rem;
+    padding: 2rem 9rem 6rem 2rem;
     text-align: left;
     font-size: 1.50rem;
 }
+
+.intro__title--regular {
+    font-weight: 400; 
+}
+
+.intro__title--bold {
+    font-weight: 900; 
+}
+
+.intro__title h2{
+    display: inline-flex;
+}
+
 
 .intro__start{
     padding: 4rem;
@@ -46,19 +59,19 @@ body{
 }
 
 .intro__links{
-    padding: 5rem 12rem 5rem 0rem;
+    padding: 5rem 11rem 5rem 0rem;
     text-align: left;
     
 }
 
 .intro__link h3{
     font-size: 3rem;
-    font-weight:200;
+    font-weight:300;
 }
 
 .intro__link--bold h2 {
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .body{
@@ -68,21 +81,27 @@ body{
 .body__head--italic{
     color: yellow;
     font-style: italic;
-    padding: 2rem 0rem 0rem 1rem;
+    padding: 4rem 2.5rem 0rem 2.5rem;
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.75rem;
     font-size-adjust: 0.40;
 }
 
-.body__head{
-    padding: 0rem 2.5rem 0.5rem 2.5rem;
-    font-size:1.75rem ;
+.body__head h2{
+    padding: 1rem 2.5rem 0rem 2.5rem;
+    font-size:2rem ;
+}
+
+.body__head h6{
+    padding: 0rem 2.5rem 2rem 2.5rem;
+    font-size:1rem ;
 }
 
 .body__main{
     padding: 0rem 2.5rem 0.5rem 2.5rem;
     font-weight: 200;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    line-height: 1.25;
 }
 
 footer{
