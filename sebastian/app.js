@@ -1,11 +1,18 @@
-require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
-
 const app = express();
+require('dotenv').config();
+const mongoose = require('mongoose');
+const userRoutes = require('./routes/userRoutes');
 
 
-mongoose.connect(process.env.CON_STRING,{   
+app.use(express.json());
+app.use(express.static('./public'));
+
+app.use('/api/users', userRoutes);
+
+const CON_STRING = "mongodb+srv://sebastian:helloworld@cluster0test1.bdvuf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0Test1";
+
+mongoose.connect(CON_STRING,{   
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
@@ -16,10 +23,14 @@ mongoose.connect(process.env.CON_STRING,{
     console.log(error);
 });
 
-app.use(express.json);
+app.use('/api/users', userRoutes);
+
+app.get('/test', (req, res) => {
+    console.log('API is working');
+  });
 
 const PORT = process.env.PORT;
 
-app.listen(PORT, () => {
+app.listen(5000, () => {
     console.log(`Server is running on ${PORT}`);
 });
