@@ -46,18 +46,19 @@ body{
 }
 
 .intro__links{
-    padding: 5rem 5rem 5rem 0rem;
+    padding: 5rem 12rem 5rem 0rem;
     text-align: left;
     
 }
 
-.intro__link{
+.intro__link h3{
     font-size: 3rem;
-    font-weight:100;
+    font-weight:200;
 }
 
-.intro__link--bold {
-    font-weight: 600;
+.intro__link--bold h2 {
+    font-size: 3rem;
+    font-weight: 900;
 }
 
 .body{
@@ -69,20 +70,23 @@ body{
     font-style: italic;
     padding: 2rem 0rem 0rem 1rem;
     text-align: left;
-    font-size-adjust: 1;
+    font-size: 1rem;
+    font-size-adjust: 0.40;
 }
 
 .body__head{
     padding: 0rem 2.5rem 0.5rem 2.5rem;
-    font-size-adjust: ;
+    font-size:1.75rem ;
 }
 
 .body__main{
     padding: 0rem 2.5rem 0.5rem 2.5rem;
     font-weight: 200;
+    font-size: 1.25rem;
 }
 
 footer{
     text-align: center;
     padding: 3rem 0rem 3rem 0rem;
+    background-color: black;
 }
