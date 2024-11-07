@@ -3,6 +3,7 @@ const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const EventId = require('../models/EventId');
+const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
@@ -53,5 +54,28 @@ router.post('/login',async (req,res) => {
 
 });
 
+router.post('/addevent',async(req,res) => {
+    try {
+        const event = new EventId({
+            eventId : req.body.eventId,
+            eventName : req.body.eventName,
+            laddoo : req.body.laddoo,
+            registered : req.body.registered
+        });
+        await event.save();
+        res.status(201).send({messege : 'Event Created Successfully'});
+    }catch(error)
+    {
+        res.status(400).send({error : `Error registering user ${error} `});
+    }
+
+});
+
+router.post('/EventCheck', async (req,res) => {
+    const event = await EventId.findOne({eventId : req.body.eventId });
+    if(!event) return res.status(404).send({messege : 'Invalid Event'});
+    res.send(event.registered);
+
+});
 
 module.exports = router;
