@@ -13,7 +13,7 @@ body{
     flex-direction: column;
     font-family: "Inter";
     background-image: url(photo-1451187580459-43490279c0fa.jpg);
-    background-size: 200%;
+    background-size: 275%;
 }
 
 .intro {
@@ -45,28 +45,44 @@ body{
     max-width: 500px;
 }
 
-.intro__start:hover{
-    background: #ffff;
-    color: black;
-}
-
 .intro__links{
-    padding: 5rem 8rem 0rem 0rem;
+    padding: 5rem 5rem 5rem 0rem;
     text-align: left;
     
+}
+
+.intro__link{
+    font-size: 3rem;
+    font-weight:100;
 }
 
 .intro__link--bold {
     font-weight: 600;
 }
 
-.intro__link{
-    transition: all 1s;
-    font-size: 2.75rem;
-    font-weight:100;
+.body{
+    background-color: black;
 }
 
-.intro__link:hover{
-    color: wheat;
-    font-size-adjust: 0.5;
+.body__head--italic{
+    color: yellow;
+    font-style: italic;
+    padding: 2rem 0rem 0rem 1rem;
+    text-align: left;
+    font-size-adjust: 1;
+}
+
+.body__head{
+    padding: 0rem 2.5rem 0.5rem 2.5rem;
+    font-size-adjust: ;
+}
+
+.body__main{
+    padding: 0rem 2.5rem 0.5rem 2.5rem;
+    font-weight: 200;
+}
+
+footer{
+    text-align: center;
+    padding: 3rem 0rem 3rem 0rem;
 }
