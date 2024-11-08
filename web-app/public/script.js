@@ -1,7 +1,6 @@
-const eventId =document.getElementById("eventid")
-const eventName = document.getElementById("eventname")
-const laddoo = document.getElementById("laddoo")
-const submit = document.getElementById("submit");
+const inputName = document.querySelector('.register__name');
+const inputPassword = document.querySelector('.register__password');
+const inputEmail = document.querySelector('.register__email');
 
 //add event  
 submit.addEventListener('click',async () => {
@@ -9,11 +8,11 @@ submit.addEventListener('click',async () => {
         const response = await fetch('http://localhost:5000/api/users/addevent', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ "eventId" : eventId.value, "eventName" : eventName.value, "laddoo" : laddoo.value})
+            body: JSON.stringify({"email" : inputEmail.value, "password" : inputPassword.value})
         });
         const data = await response.json();
         if (response.ok) {
-            alert('Registration successful!');
+            alert('Login successful!');
         } else {
             alert(data.error);
         }
