@@ -159,3 +159,180 @@ nav {
 	align-items: center;
 	color: transparent;
 }
+
+.events__title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40%;
+}
+
+.events__title h1 {
+	color: var(--color-primary);
+}
+
+.events__title h1 span {
+	color: var(--color-green);
+}
+
+.events__box {
+	padding: 1rem 2rem;
+	translate: 0 -5rem;
+}
+
+.event {
+	border: 2px solid var(--color-primary);
+	padding: 1rem;
+	background: var(--color-green);
+	margin-bottom: 1rem;
+}
+
+.event--main {
+	background: var(--color-green-dark);
+	color: white;
+}
+
+.event__top {
+	padding-bottom: 2rem;
+}
+
+.event__top h1 {
+	line-height: 1.25;
+	width: 80%;
+	font-size: 1.2rem;
+}
+
+.event__top p {
+	font-size: 0.7rem;
+	padding-top: 0.2rem;
+	color: #fdcb6e;
+}
+
+.event__bottom {
+	font-size: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.event__bottom p {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.events__title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 40%;
+}
+
+.events__title h1 {
+	color: var(--color-primary);
+}
+
+.events__title h1 span {
+	color: var(--color-green);
+}
+
+.events__box {
+	padding: 1rem 2rem;
+	translate: 0 -5rem;
+}
+
+.event {
+	border: 2px solid var(--color-primary);
+	padding: 1rem;
+	background: var(--color-green);
+	margin-bottom: 1rem;
+}
+
+.event--main {
+	background: var(--color-green-dark);
+	color: white;
+}
+
+.event__top {
+	padding-bottom: 2rem;
+}
+
+.event__top h1 {
+	line-height: 1.25;
+}
+
+.event__top p {
+	font-size: 0.7rem;
+	padding-top: 0.2rem;
+	color: #fdcb6e;
+}
+
+.event__bottom {
+	font-size: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.event__bottom p {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.register__title {
+	height: 30vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.register__title h1 {
+	color: var(--color-primary);
+}
+
+.register__title h1 span {
+	color: var(--color-green);
+}
+
+.register__choice {
+	padding: 0 5%;
+}
+
+.register button {
+	background: #ffffff44;	
+	color: white;
+	border: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	display: inline-block;
+	font-family: "Press Start 2P";
+}
+
+.register button.selected {
+	background: var(--color-green);
+}
+
+.register__form {
+	padding: 0 5%;
+}
+
+.register__form input {
+	border: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	margin: 1rem 0;
+	display: block;
+	font-family: "Press Start 2P";
+	width: 100%;
+}
+
+.register__form input {
+	outline-color: var(--color-green);
+}
+
+.register__form input:focus {
+	background: var(--color-green);
+	color: var(--color-primary);
+}
+
+.menu {
+	background: var(--color-green);
+}

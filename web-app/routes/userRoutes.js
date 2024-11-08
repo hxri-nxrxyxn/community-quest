@@ -7,7 +7,8 @@ const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
-//sent egister data to /register
+//sent register data to /register
+//format username password email
 router.post('/register', async(req,res) => {
     try {
         console.log(req.body);
@@ -35,6 +36,7 @@ router.post('/register', async(req,res) => {
     }
 });
 
+//format email password
 router.post('/login',async (req,res) => {
     try {
         const user = await User.findOne({email : req.body.email});
@@ -54,16 +56,19 @@ router.post('/login',async (req,res) => {
 
 });
 
+//format eventId eventName laddoo registered
 router.post('/addevent',async(req,res) => {
     try {
         const event = new EventId({
-            eventId : req.body.eventId,
+            eventId : uuidv4(),
             eventName : req.body.eventName,
             laddoo : req.body.laddoo,
             registered : req.body.registered
         });
         await event.save();
         res.status(201).send({messege : 'Event Created Successfully'});
+        //updates and adds to events (counter)
+        const events = new events({eventId : req.body.eventId});
     }catch(error)
     {
         res.status(400).send({error : `Error registering user ${error} `});
@@ -71,10 +76,30 @@ router.post('/addevent',async(req,res) => {
 
 });
 
-router.post('/EventCheck', async (req,res) => {
+//format eventid
+router.post('/eventCheck', async (req,res) => {
     const event = await EventId.findOne({eventId : req.body.eventId });
     if(!event) return res.status(404).send({messege : 'Invalid Event'});
     res.send(event.registered);
+
+});
+
+//registers for an event
+//format email eventid
+router.post('/eventregister',async(req,res) => {
+    try{
+    const username = await User.findOneAndUpdate({ email: req.body.email }, 
+        { $push: { events: req.body.eventId } },
+        { new: true }
+    );
+    if(!username){
+        return res.status(404).send({ message: 'Username not found' });
+    }
+    return res.send(username.events);   
+}
+catch(error) {
+    res.status(400).send({ error: `Error registering user: ${error}` });
+}
 
 });
 

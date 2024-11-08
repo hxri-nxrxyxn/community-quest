@@ -1,0 +1,3 @@
+CON_STRING = mongodb+srv://sebastian:helloworld@cluster0test1.bdvuf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0Test1
+PORT = 5000
+JWT_SECRET=mysecretkey
