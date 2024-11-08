@@ -12,9 +12,20 @@ body{
     justify-content: center;
     flex-direction: column;
     font-family: "Inter";
-    background-image: url(photo-1451187580459-43490279c0fa.jpg);
-    background-size: 275%;
+    background-image: url(image.jpg);
+    background-size: 500%;
+    background-position: top left;
+    animation: moveIt 15s linear infinite;
+    background-repeat: repeat;
 }
+
+@keyframes moveIt {
+    from {background-position: top left;}
+    to {background-position: bottom right;}
+    from {background-position: bottom right;}
+    to {background-position: top left;}
+}
+
 
 .intro {
     flex-grow: 1;
@@ -33,11 +44,11 @@ body{
 }
 
 .intro__title--regular {
-    font-weight: 400; 
+    font-weight: 200; 
 }
 
 .intro__title--bold {
-    font-weight: 900; 
+    font-weight: 700; 
 }
 
 .intro__title h2{
@@ -54,9 +65,9 @@ body{
     border-radius:50%;
     width: 35vw;
     height: 35vw;
-    transition-duration: ease 5s;
     max-width: 500px;
 }
+
 
 .intro__links{
     padding: 5rem 11rem 5rem 0rem;
