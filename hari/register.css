@@ -1,0 +1,55 @@
+.register__title {
+	height: 30vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.register__title h1 {
+	color: var(--color-primary);
+}
+
+.register__title h1 span {
+	color: var(--color-green);
+}
+
+.register__choice {
+	padding: 0 5%;
+}
+
+.register button {
+	background: #ffffff44;	
+	color: white;
+	border: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-weight: 600;
+	display: inline-block;
+}
+
+.register button.selected {
+	background: var(--color-green);
+}
+
+.register__form {
+	padding: 0 5%;
+}
+
+.register__form input {
+	border: 0;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	margin: 1rem 0;
+	display: block;
+	font-family: "Press Start 2P";
+	width: 100%;
+}
+
+.register__form input {
+	outline-color: var(--color-green);
+}
+
+.register__form input:focus {
+	background: var(--color-green);
+	color: var(--color-primary);
+}
