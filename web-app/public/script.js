@@ -2,6 +2,7 @@ const inputName = document.querySelector('.register__name');
 const inputPassword = document.querySelector('.register__password');
 const inputEmail = document.querySelector('.register__email');
 const submit = document.querySelector('.btn-login')
+console.log(submit)
 
 //add event  
 submit.addEventListener('click',async () => {
@@ -24,3 +25,4 @@ submit.addEventListener('click',async () => {
         console.error('Error:', error);
     }
 });
+

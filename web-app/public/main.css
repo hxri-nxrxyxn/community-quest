@@ -198,6 +198,8 @@ nav {
 
 .event__top h1 {
 	line-height: 1.25;
+	width: 80%;
+	font-size: 1.2rem;
 }
 
 .event__top p {
@@ -329,4 +331,8 @@ nav {
 .register__form input:focus {
 	background: var(--color-green);
 	color: var(--color-primary);
+}
+
+.menu {
+	background: var(--color-green);
 }
