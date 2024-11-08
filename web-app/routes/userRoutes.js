@@ -57,32 +57,41 @@ router.post('/login',async (req,res) => {
 });
 
 //format eventId eventName laddoo registered
-router.post('/addevent',async(req,res) => {
+
+router.post('/addevent', async(req,res) => {
     try {
+        console.log(req.body);
+
+        //creating new  user
         const event = new EventId({
-            eventId : uuidv4(),
+            eventId : req.body.eventId,
             eventName : req.body.eventName,
             laddoo : req.body.laddoo,
             registered : req.body.registered
         });
-        await event.save();
-        res.status(201).send({messege : 'Event Created Successfully'});
-        //updates and adds to events (counter)
-        const events = new events({eventId : req.body.eventId});
-    }catch(error)
-    {
-        res.status(400).send({error : `Error registering user ${error} `});
-    }
 
+
+        await user.save();
+        //user created successfully
+
+        res.status(201).send({message : 'event created Successfully'});
+    } catch(error){
+        //error registering user
+        //1100 for already existing unique ids
+        if(error.code == 11000){
+            return res.status(400).send({error : 'event already exists '});
+        }
+        res.status(400).send({error : `Error registering event ${error} `});
+    }
 });
 
 //format eventid
-router.post('/eventCheck', async (req,res) => {
-    const event = await EventId.findOne({eventId : req.body.eventId });
-    if(!event) return res.status(404).send({messege : 'Invalid Event'});
-    res.send(event.registered);
+// router.post('/eventCheck', async (req,res) => {
+//     const event = await EventId.findOne({eventId : req.body.eventId });
+//     if(!event) return res.status(404).send({messege : 'Invalid Event'});
+//     res.send(event.registered);
 
-});
+// });
 
 //registers for an event
 //format email eventid
@@ -102,5 +111,19 @@ catch(error) {
 }
 
 });
+
+router.get('/event',(req,res) => {
+    eventId.find()
+    .then(document => {
+        // Iterate through the array of events
+        document.forEach(eventId => {
+            return res.send(document);  // Each 'event' is an instance of the Event model
+        });
+    })
+    .catch(err => {
+        console.error('Error retrieving events:', err);
+    });
+})
+
 
 module.exports = router;
