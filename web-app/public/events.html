@@ -23,7 +23,7 @@
 				</div>
 				<div class="event__bottom">
 					<h2>6AM 24AUG</h2>
-					<p class="btn-">REGISTER</p>
+					<p class="btn-menu">REGISTER</p>
 				</div>
 			</div>
 			<div class="event">
@@ -74,5 +74,10 @@
 	</nav>
 	<embed src="music/bgm.mp3" hidden="true" autostart="true">
 		<script src="main.js"></script>
+		<script>
+			document.querySelector('.btn-menu').addEventListener("click", () => {
+				window.location.href = 'menu.html'
+			})
+		</script>
 </body>
 </html>
