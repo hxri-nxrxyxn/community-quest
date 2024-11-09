@@ -35,10 +35,6 @@ In CommunityQuest, tasks are presented as quests on a map that represents real-w
 - **Git:** Ensures efficient version control and code management, enabling smooth collaboration and stability.
 - **OpenStreetMap:** Powers detailed and interactive maps that visualize community service needs and help users navigate.
 
-## Installation
-
-To set-up CommunityQuest locally:
-
 
 ## Usage
 
