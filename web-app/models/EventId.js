@@ -10,7 +10,7 @@ const eventSchema = new mongoose.Schema({
     //time : {type : String, required : true },
 });
 
-module.exports = mongoose.model('EventID',eventSchema);
+module.exports = mongoose.model('EventId',eventSchema);
 
 
 

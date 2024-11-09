@@ -30,9 +30,9 @@ router.post('/register', async(req,res) => {
         //error registering user
         //1100 for already existing unique ids
         if(error.code == 11000){
-            return res.status(400).send({error : 'User already exists '});
+            return res.status(202).send({error : 'User already exists '});
         }
-        res.status(400).send({error : `Error registering user ${error} `});
+        res.status(400).send(error);
     }
 });
 
@@ -44,7 +44,7 @@ router.post('/login',async (req,res) => {
         const  isPasswordValid = await bycrypt.compare(req.body.password, user.password);
         if(!isPasswordValid){
             //executed when password is wrong
-            res.send({ message: 'login failed',});
+            return res.send({ message: 'login failed',});
         }
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         res.send({ message: 'Login successful', token });
@@ -105,25 +105,23 @@ router.post('/eventregister',async(req,res) => {
         return res.status(404).send({ message: 'Username not found' });
     }
     return res.send(username.events);   
-}
+}   
 catch(error) {
     res.status(400).send({ error: `Error registering user: ${error}` });
 }
 
 });
 
-router.get('/event',(req,res) => {
-    eventId.find()
-    .then(document => {
-        // Iterate through the array of events
-        document.forEach(eventId => {
-            return res.send(document);  // Each 'event' is an instance of the Event model
-        });
-    })
-    .catch(err => {
-        console.error('Error retrieving events:', err);
-    });
-})
+router.get('/event', async (req,res) => {
+    try {
+        const events = await EventId.find()
+         return res.send(events);  
+        }
+    catch(error){
+        res.status(500).send();
+    }
+});
+
 
 
 module.exports = router;

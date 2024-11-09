@@ -6,7 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 
 
 app.use(express.json());
-app.use(express.static('./public'));
+app.use(express.static('./testserver'));
 
 app.use('/api/users', userRoutes);
 
