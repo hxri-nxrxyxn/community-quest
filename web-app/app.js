@@ -10,7 +10,7 @@ app.use(express.static('./testserver'));
 
 app.use('/api/users', userRoutes);
 
-const CON_STRING = "mongodb+srv://sebastian:helloworld@cluster0test1.bdvuf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0Test1";
+const CON_STRING = process.env.CON_STRING;
 
 mongoose.connect(CON_STRING,{   
     useNewUrlParser: true,
@@ -31,6 +31,6 @@ app.get('/test', (req, res) => {
 
 const PORT = process.env.PORT;
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on ${PORT}`);
 });

@@ -46,6 +46,46 @@ const onregister = async() => {
     }
 }
 
- 
+ const onlogin = async() => {
+    if (!password.value || !email.value) {
+        alert('All fields are required.');
+        return;
+    }
+    try{
+        const response = await fetch('http://localhost:5000/api/users/login', {
+            method : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                password : String(password.value),
+                email : String(email.value)
+            })
+        });
+        const data = await response.json();
+        if(response.ok){
+            if(response.status == 201){
+                //if  email is successfully logged in
+                alert('User Logged in succesfully');
+            }
+            if(response.status == 202){
+                //if the email is not found
+                alert('User not found');
+            }
+            if(response.status == 203){
+                //if the email exists but the password is incorrect
+                alert('password is incorrect');
+            }
+        }
+        else{
+            //if there is an error with logging into the user
+            alert('error with logging in');
+            console.log(response) //logs the error
+        }
+    }
+    catch(error){
+        //if there is an error during the fetching process
+        console.log(error);
+        alert('Error during the fetching process')
+    }
+ }
 
-loginbtn.addEventListener('click',onregister);
+loginbtn.addEventListener('click',onlogin);
