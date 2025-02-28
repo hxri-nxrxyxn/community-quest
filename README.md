@@ -2,6 +2,9 @@
 
 CommunityQuest is a gamified, real-world mapping platform that promotes community service by connecting volunteers with local causes in need of support. This innovative app bridges the gap between eager volunteers and communities in need, making it easy to find, join, and contribute to impactful social initiatives. Volunteers can sign up for tasks, track their contributions, and earn rewards for their involvement, creating a fun and rewarding experience while fostering positive change.
 
+![plum-modified](https://github.com/user-attachments/assets/f815b74f-1b25-4c46-ad91-d8fa71a5be57)
+
+
 ## Overview
 In CommunityQuest, tasks are presented as quests on a map that represents real-world locations. Users can view events happening currently and their corresponding locations, sign up to volunteer, and make a meaningful impact in their communities. The app supports easy volunteer management, allowing both individuals and organizations to post community service opportunities and track the progress of each task. With a strong emphasis on gamification, CommunityQuest motivates volunteers through points, badges, and levels, encouraging ongoing involvement and creating a positive social impact.
 
